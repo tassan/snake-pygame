@@ -7,7 +7,7 @@ pygame.init()
 
 screen = pygame.display.set_mode((640, 480), 0, 32)
 screen.fill((0, 0, 0))
-pygame.display.set_caption("Hello, World!")
+pygame.display.set_caption("Snake em Python com Pygame")
 
 # Definindo a nossa cobra
 snake_positions = [(300, 300), (310, 300), (320, 300)]
@@ -27,9 +27,9 @@ while running:
             pygame.quit()
             exit()
 
-        # x = random.randint(0, 630)
-        # y = random.randint(0, 470)
-        # screen.blit(apple, (x//10 * 10, y//10 * 10))
+        x = random.randint(0, 630)
+        y = random.randint(0, 470)
+        screen.blit(apple, (x//10 * 10, y//10 * 10))
         
         for pos in snake_positions:
             screen.blit(snake, pos)
