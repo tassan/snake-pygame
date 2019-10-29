@@ -8,6 +8,10 @@ screen = pygame.display.set_mode([640, 480], 0, 32)
 screen.fill((0, 0, 0))
 pygame.display.set_caption("Hello, World!")
 
+# Definindo a nossa maçã
+apple = pygame.Surface((10, 10))
+apple.fill((255, 0, 0))
+
 running = True
 
 while running:
