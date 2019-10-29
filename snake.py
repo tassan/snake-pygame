@@ -47,6 +47,19 @@ while running:
             if event.key == K_LEFT:
                 direcao = 3
 
+    for i in range(len(snake_pos) - 1, 0, -1):
+        snake_pos[i] = (snake_pos[i-1][0], snake_pos[i-1][1])
+
+    if direcao == 0:
+        snake_pos[0] = (snake_pos[0][0], snake_pos[0][1] - 10)
+    if direcao == 1:
+        snake_pos[0] = (snake_pos[0][0], snake_pos[0][1] + 10)
+    if direcao == 2:
+        snake_pos[0] = (snake_pos[0][0] + 10, snake_pos[0][1])
+    if direcao == 3:
+        snake_pos[0] = (snake_pos[0][0] - 10, snake_pos[0][1])
+    
+
     screen.blit(apple, apple_position)
     for pos in snake_pos:
         screen.blit(snake, pos)
