@@ -6,7 +6,6 @@ from sys import exit
 pygame.init()
 
 screen = pygame.display.set_mode((640, 480), 0, 32)
-screen.fill((0, 0, 0))
 pygame.display.set_caption("Snake em Python com Pygame")
 
 # Definindo a nossa cobra
@@ -62,7 +61,7 @@ while running:
     if direcao == 3:
         snake_pos[0] = (snake_pos[0][0] - 10, snake_pos[0][1])
     
-
+    screen.fill((0, 0, 0))
     screen.blit(apple, apple_position)
     for pos in snake_pos:
         screen.blit(snake, pos)
