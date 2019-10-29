@@ -10,9 +10,10 @@ screen.fill((0, 0, 0))
 pygame.display.set_caption("Snake em Python com Pygame")
 
 # Definindo a nossa cobra
-snake_positions = [(300, 300), (310, 300), (320, 300)]
+snake_pos = [(300, 300), (310, 300), (320, 300)]
 snake = pygame.Surface((10, 10))
 snake.fill((0, 255, 0))
+
 
 def posicao_aleatoria():
     x = random.randint(0, 630)
@@ -34,8 +35,19 @@ while running:
             pygame.quit()
             exit()
 
+        if event.type == KEYDOWN:
+            if event.key == K_UP:
+                snake_pos[0] = (snake_pos[0][0], snake_pos[0][1] - 10)
+            if event.key == K_DOWN:
+                snake_pos[0] = (snake_pos[0][0], snake_pos[0][1] + 10)
+            if event.key == K_RIGHT:
+                snake_pos[0] = (snake_pos[0][0] + 10, snake_pos[0][1])
+            if event.key == K_LEFT:
+                snake_pos[0] = (snake_pos[0][0] - 10, snake_pos[0][1])
+
+
         screen.blit(apple, apple_position)
-        for pos in snake_positions:
+        for pos in snake_pos:
             screen.blit(snake, pos)
 
         pygame.display.update()
