@@ -21,6 +21,7 @@ def posicao_aleatoria():
 
 
 # Definindo a nossa maçã
+apple_position = posicao_aleatoria()
 apple = pygame.Surface((10, 10))
 apple.fill((255, 0, 0))
 
@@ -33,8 +34,7 @@ while running:
             pygame.quit()
             exit()
 
-        screen.blit(apple, posicao_aleatoria())
-        
+        screen.blit(apple, apple_position)
         for pos in snake_positions:
             screen.blit(snake, pos)
 
