@@ -20,6 +20,10 @@ def posicao_aleatoria():
     return (x//10 * 10, y//10 * 10)
 
 
+def colisao(objetoA, objetoB):
+    return (objetoA[0] == objetoB[0]) and (objetoA[1] == objetoB[1])
+
+
 # Definindo a nossa maçã
 apple_position = posicao_aleatoria()
 apple = pygame.Surface((10, 10))
@@ -48,6 +52,10 @@ while running:
                 direcao = 2
             if event.key == K_LEFT:
                 direcao = 3
+
+    if colisao(snake_pos[0], apple_position):
+        apple_position = posicao_aleatoria()
+        snake_pos.append((0,0))
 
     for i in range(len(snake_pos) - 1, 0, -1):
         snake_pos[i] = (snake_pos[i-1][0], snake_pos[i-1][1])
