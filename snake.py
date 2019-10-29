@@ -26,22 +26,7 @@ apple_position = posicao_aleatoria()
 apple = pygame.Surface((10, 10))
 apple.fill((255, 0, 0))
 
-
-def direcao():
-    direcao = 0
-    
-    if event.type == KEYDOWN:
-        if event.key == K_UP:
-            direcao = 0
-        if event.key == K_DOWN:
-            direcao = 2
-        if event.key == K_RIGHT:
-            direcao = 1
-        if event.key == K_LEFT:
-            direcao = 3
-    
-    return direcao
-
+direcao = 3 # Esquerda
 
 running = True
 
@@ -51,12 +36,17 @@ while running:
         if event.type == QUIT:
             pygame.quit()
             exit()
-
-    direcao_cobra = direcao()
-
-    for i in range(len(snake_pos) - 1, 0, -1):
-        snake_pos[i] = (snake_pos[i-1][0], snake_pos[i-1][1])
     
+        if event.type == KEYDOWN:
+            if event.key == K_UP:
+                direcao = 0
+            if event.key == K_DOWN:
+                direcao = 1
+            if event.key == K_RIGHT:
+                direcao = 2
+            if event.key == K_LEFT:
+                direcao = 3
+
     screen.blit(apple, apple_position)
     for pos in snake_pos:
         screen.blit(snake, pos)
