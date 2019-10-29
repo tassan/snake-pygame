@@ -21,4 +21,6 @@ while running:
             pygame.quit()
             exit()
 
+        screen.blit(apple, (30, 40))
+
         pygame.display.update()
