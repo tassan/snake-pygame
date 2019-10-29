@@ -9,6 +9,11 @@ screen = pygame.display.set_mode((640, 480), 0, 32)
 screen.fill((0, 0, 0))
 pygame.display.set_caption("Hello, World!")
 
+# Definindo a nossa cobra
+snake_positions = [(300, 300), (310, 300), (320, 300)]
+snake = pygame.Surface((10, 10))
+snake.fill((0, 255, 0))
+
 # Definindo a nossa maçã
 apple = pygame.Surface((10, 10))
 apple.fill((255, 0, 0))
@@ -22,8 +27,8 @@ while running:
             pygame.quit()
             exit()
 
-        x = random.randint(0, 630)
-        y = random.randint(0, 470)
-        screen.blit(apple, (x//10 * 10, y//10 * 10))
+        # x = random.randint(0, 630)
+        # y = random.randint(0, 470)
+        # screen.blit(apple, (x//10 * 10, y//10 * 10))
 
         pygame.display.update()
