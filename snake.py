@@ -30,5 +30,8 @@ while running:
         # x = random.randint(0, 630)
         # y = random.randint(0, 470)
         # screen.blit(apple, (x//10 * 10, y//10 * 10))
+        
+        for pos in snake_positions:
+            screen.blit(snake, pos)
 
         pygame.display.update()
