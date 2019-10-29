@@ -30,7 +30,10 @@ direcao = 3 # Esquerda
 
 running = True
 
+clock = pygame.time.Clock()
+
 while running:
+    clock.tick(10)
 
     for event in pygame.event.get():
         if event.type == QUIT:
